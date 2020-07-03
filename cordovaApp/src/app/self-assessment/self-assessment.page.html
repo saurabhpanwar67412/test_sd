@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+      <ion-back-button mode="ios" color="primary" defaultHref="main"></ion-back-button>
+    </ion-buttons>
+  <ion-title  mode="ios" color="primary">Self Assessment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<div class="first">
+<p>Please note that information from this form will be used for monitoring & management of the current
+health crisis and research in the fight against COVID-19.<p>
+</div> <br>
+<div class="second">
+<p>Are you experiencing any of the following symptoms ?<p>
+</div>
+  <form>
+
+    <!-- Checkboxes --><br>
+    <ion-list lines="full">
+        <h2>Symptoms</h2>
+               <button ion-button color="light" id="Cough_yes" (click)="Cough($event)" style="margin:5px;">Cough</button> 
+
+       <button ion-button color="light" id="Fever_yes" (click)="Fever($event)" style="margin:5px;">Fever</button> 
+      
+      <button ion-button color="light" id="Breathing_yes" (click)="Breathing($event)" style="margin:5px;">Difficulty in Breathing</button> 
+     
+      <button ion-button color="light" id="senses_yes" (click)="senses($event)" style="margin:5px;">Loss of senses of smell and taste</button> 
+     
+      <button ion-button color="light" id="None_symptom" (click)="None_symptoms($event)" style="margin:5px;">None of the above</button> 
+   
+    </ion-list>
+    <br><br>
+
+     <div class="second">
+<p>Have you ever had any of the following ?<p>
+</div> <br> <br>
+ <!-- Checkboxes --><br>
+    <ion-list lines="full">
+       <button ion-button color="light" id="Diabetes_yes" (click)="Diabetes($event)" style="margin:5px;">Diabetes</button>
+     
+       <button ion-button color="light" id="Hypertension_yes" (click)="Hypertension($event)" style="margin:5px;">Hypertension</button> 
+    
+      <button ion-button color="light" id="Lung_yes" (click)="Lung($event)" style="margin:5px;">Lung disease</button> 
+     
+      <button ion-button color="light" id="Heart_yes" (click)="Heart($event)" style="margin:5px;">Heart Disease</button> 
+     
+     <button ion-button color="light" id="had_following_None" (click)="following_None($event)" style="margin:5px;">None of the above</button> 
+    </ion-list>
+
+     <br><br>
+
+     <div class="second">
+<p>Have you traveled anywhere internationally in the last 28-45 days ? <p>
+</div> <br> <br>
+
+<button ion-button color="light" id="traveled_Yes" (click)="traveled_yes($event)" style="margin:5px;">Yes</button>
+<button ion-button color="light" id="traveled_No" (click)="traveled_no($event)" style="margin:10px;">No</button>
+<br><br>
+
+    <div class="second">
+<p> Which of the following apply to you? <p>
+</div> <br> <br>
+<button ion-button color="light" id="interacted_Yes" (click)="interacted($event)" style="margin:5px;">I have recently interacted or lived with someone <br> who  has tested positive for COVID -19</button> <br><br>
+<button ion-button color="light" id="confirmcase" (click)="confirmedcase($event)" style="margin:5px;">I am a healthcare worker and i examined a <br> COVID-19 confirmed case without  <br>  protection gear</button> <br><br>
+<button ion-button color="light" id="traveleapply_noned_Yes" (click)="apply_none($event)" style="margin:5px;">None of the above</button><br><br>
+
+<br>
+
+    <div class="third">
+<p> your infection risk is low. We recommend that you stay at home to avoid any chance of exposure to the Novel Coronavirus. 
+<br>  Retake the self-Assessment Test if you develop symptoms or come in contact with a COVID-19 confirmed patient. <br><br> </p>
+
+</div> <br> <br>
+
+
+
+
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button button ion-buttontype="submit" color="danger" expand="block" (click)="submit()">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  
+
+
+  </form>
+
+ 
+
+
+</ion-content>

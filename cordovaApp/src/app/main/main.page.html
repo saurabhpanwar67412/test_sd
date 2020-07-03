@@ -1,0 +1,71 @@
+<ion-header no-border>
+  <ion-toolbar no-border>
+      <ion-title>
+         Escorts Social Distancing
+      </ion-title>
+
+   <div class="iconprofile">
+      <ion-icon  color="primary"  name="person-circle-outline" [routerLink]="['/profile']" ></ion-icon>
+        <!-- <ion-icon color="primary" slot="icon-only" name="contact"></ion-icon> -->
+      </div>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="form">
+  
+    <ion-card color="" mode="ios">
+
+      <ion-card-content *ngFor="let item of item">
+        <h1 class="goodfont">Welcome back {{item.payload.doc.data().name }} !</h1>
+      </ion-card-content>
+    </ion-card>
+    <ion-segment color="secondary" [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
+  <ion-segment-button value="Self" checked>
+    <ion-label>Self Assessment</ion-label>
+  </ion-segment-button>
+<!--
+  <ion-segment-button value="Social">
+    <ion-label>Social distancing </ion-label>
+  </ion-segment-button>  -->
+   <ion-segment-button value="media">
+    <ion-label>Media </ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+<div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'Self'">
+      <ion-item *ngFor="let item of image_url">
+        <ion-thumbnail slot="start">
+          <img src="{{item.url}}">
+        </ion-thumbnail>
+        <h6 > {{ item.label }}</h6>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Social'">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="https://avatars.io/instagram/unknown">
+        </ion-thumbnail>
+        <h6>Please maintain 6 feet distance</h6>
+      </ion-item>
+    </ion-list>
+  </div>
+    <br>
+    <br>
+    <!-- Not working right now!!!  -->
+   
+  </div>
+
+  <!-- Animation -->
+
+  
+  
+  <ion-button  color="success" fill="outline" shape="round" id="call" (click)="callNow('+918700684302')">Call Helpline</ion-button> 
+   <ion-button  [routerLink]="['/self-assessment']" color="success" fill="outline" shape="round" id="self">Self Assess</ion-button>
+  
+
+</ion-content>
